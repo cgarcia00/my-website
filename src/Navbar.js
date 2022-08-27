@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav>
       <div className="nav-center">
         <div className="nav-header">
-          <Link to={"/"}>
+          <Link to={"/my-website"}>
             <img src={name_img} alt="my name" />
           </Link>
           <button
