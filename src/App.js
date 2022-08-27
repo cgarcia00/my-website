@@ -1,24 +1,77 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+//pages
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+import Projects from "./Projects";
+import Blog from "./Blog";
+import Error from "./Error";
+import defaultBg from "./img/pexels-bg1.jpg";
+import Project from "./Project";
+import BlogPost1 from "./BlogPost1";
 
 function App() {
+  // These three states are so the routes can control
+  // their background
+  const [bgColor, setBgColor] = useState("white");
+  const [bgIsImage, setBgIsImage] = useState(true);
+  const [bgImg, setBgImg] = useState(defaultBg);
+
+  const changeBackground = (isImg, val) => {
+    setBgIsImage(isImg);
+    if (isImg) {
+      setBgImg(val);
+    } else {
+      setBgColor(val);
+    }
+  };
+
+  if (bgIsImage) {
+    document.body.style.backgroundImage = `url(${bgImg})`;
+    document.body.style.backgroundColor = `white`;
+  } else {
+    document.body.style.backgroundImage = ``;
+    document.body.style.backgroundColor = `${bgColor}`;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={<Home changeBackground={changeBackground} />}
+        />
+        <Route
+          path="/projects"
+          element={<Projects changeBackground={changeBackground} />}
+        />
+        <Route
+          path="/blog"
+          element={<Blog changeBackground={changeBackground} />}
+        />
+        <Route
+          path="/contact"
+          element={<Contact changeBackground={changeBackground} />}
+        />
+        <Route path="/about" element={<About />} />
+        <Route
+          path="/projects/:id"
+          element={<Project changeBackground={changeBackground} />}
+        />
+        <Route
+          path="/blog/audio-lightswitch"
+          element={<BlogPost1 changeBackground={changeBackground} />}
+        />
+        <Route
+          path="*"
+          element={<Error changeBackground={changeBackground} />}
+        />
+      </Routes>
+    </Router>
   );
 }
 
