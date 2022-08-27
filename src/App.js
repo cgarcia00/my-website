@@ -46,6 +46,11 @@ function App() {
           element={<Home changeBackground={changeBackground} />}
         />
         <Route
+          exact
+          path="/my-website"
+          element={<Home changeBackground={changeBackground} />}
+        />
+        <Route
           path="/projects"
           element={<Projects changeBackground={changeBackground} />}
         />

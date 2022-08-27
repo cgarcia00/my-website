@@ -22,7 +22,7 @@ import reactLogo from "./img/logo512.png";
 export const links = [
   {
     id: 1,
-    url: "/my-website",
+    url: "/",
     text: "home",
   },
   {
