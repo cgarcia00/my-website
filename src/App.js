@@ -12,6 +12,8 @@ import Error from "./Error";
 import defaultBg from "./img/pexels-bg1.jpg";
 import Project from "./Project";
 import BlogPost1 from "./BlogPost1";
+import BlogPost_ImageCompressor from "./BlogPost_ImageCompressor";
+import BlogPost_HiddenData from "./BlogPost_HiddenData";
 
 function App() {
   // These three states are so the routes can control
@@ -70,6 +72,16 @@ function App() {
         <Route
           path="/blog/audio-lightswitch"
           element={<BlogPost1 changeBackground={changeBackground} />}
+        />
+        <Route
+          path="/blog/image-compressor"
+          element={
+            <BlogPost_ImageCompressor changeBackground={changeBackground} />
+          }
+        />
+        <Route
+          path="/blog/hidden-data"
+          element={<BlogPost_HiddenData changeBackground={changeBackground} />}
         />
         <Route
           path="*"
