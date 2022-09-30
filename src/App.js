@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router basename="/my-website">
       <Routes>
         <Route
           exact

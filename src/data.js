@@ -210,7 +210,7 @@ export const blogPosts = [
   },
   {
     id: 3,
-    name: "Hidding Data in Music",
+    name: "Hiding Data in Music",
     text: "Here I hid data inside Toto's Africa by taking out certain frequencies from the song and injecting new data. (Note: This post is about a class assignment and it is a Jupyter Notebook)",
     img: toto,
     url: "/blog/hidden-data",
