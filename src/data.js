@@ -34,6 +34,12 @@ import vlsiVid1 from "./vid/quick_demo.mov";
 import vlsiVid2 from "./vid/vlsiVid2.mp4";
 import vlsiVidImg1 from "./img/chords.png";
 import vlsiVidImg2 from "./img/note.png";
+import kirby from "./img/kirbyCropped.png";
+import kirby0 from "./img/kirby.png";
+import kirby1 from "./img/kirby1.png";
+import kirby2 from "./img/kirby2.png";
+import kirbyVid from "./vid/kirby3.mp4";
+import kirbyVidImage from "./img/kirbyVid.png";
 
 export const links = [
   {
@@ -189,6 +195,26 @@ In the media for this project there are two videos where the delay is increased 
         `I also used AsyncStorage to store all the data the user entered. This way if the app is refreshed it still retains all its data. This can be seen in the “Storage Demo” video linked to the left. Here I am seen entering the app by scanning the Exp Go QR code on my laptop and entering the app. I had previously entered data on the class and it was retained. If AsyncStorage was not used the screen would’ve been blank. AsyncStorage was like a mini database. I was able to pass the data through the database as opposed to passing it through prop drilling. I did both of these when they were appropriate but having the extra option was quite helpful.`,
       ],
       `This app was made throughout the course of five days. This includes both learning the framework and the creation of the app. This app was the last main project for the Summer of 2022 so my goal was just to learn how to use React Native and quickly move on. I hope to continue using React Native and create fun and practical apps. (The app demo to left showcases the app in action!)`,
+    ],
+  },
+  {
+    id: 5,
+    name: "RayTracing in Blender with Kirby?",
+    text: "This is the final project for CS148 where I had to model and texture objects and a scene and then produce a raytraced image.",
+    img: kirby,
+    media: [kirbyVidImage, kirby0, kirby1, kirby2],
+    mediaType: ["video", "image", "image", "image"],
+    videos: [kirbyVid],
+    projectPost: [
+      "For my graphics course, CS148, I hade to 3D model and texture a scene in blender and then use blenders raytrace render, Cycles, to create a raytraced image.",
+      [
+        `To create the scene I first had to create objects for the scene. Conceptually I wanted to create a bowling lane where the popular nintendo character Kirby was the bowling ball and the bowling pins would be attending the inaugural speech of the newly elected president bowling pin. I wanted to make something creative and get some style points.`,
+        `Many of the objects I acquired from open source resources. The bowling pin, the pillars, and the TV you can see on the reflection on the floor are some examples of assets I did not make myself. Other assets like Kirby, the flag, and bowling bumpers I had to model myself using the mesh tools in blender. I had to arrange the walls and cut, move, and adjust everything so that it would look right.`,
+        `After modeling comes texturing. Many open source assets come with their own texture but for floors and walls there are standalone textures. Textures are basically stickers you slap on an object but there are actually many intricacies, and math concepts, involved in texturing. To keep a texture from looking flat there are different texture channels one can use. The diffuse channel in Blender just changes the surface color of an object but the normal and displacement channels add depth by deforming the underlying object itself - think ridges and cracks in a rock. Using these texturing techniques I was able to render a more natural scene.`,
+        `Additionally I had to edit the BRDF, the Bidirectional Reflectance Distribution Function, of objects which controlled the materials optic properties like how metallic or rough an object was. I added a clear coat effect to Kirby and the bowling pins to give them a more polished look and made aspects of the bowling lane metallic. Every object in the scene has a slightly altered BRDF to achieve its desired effect.`,
+        `After positioning the camera and adding additional effects like volumetric effects and focus blur I produced a ray traced image with an interesting composition and effects. The media below has a video going through some different blender portions of the project like the shading and texturing. The first image is the full image. The second is from the texture mapping. The final image is from the whole scenes layout.`,
+      ],
+      `Learning blender and using my software knowledge was a great creative outlet and I enjoyed CS148 and this project very much. I was able to insert one of my favorite video game characters into a fun project. I hope to use blender in the future if I ever need to make assets or showcase something interesting.`,
     ],
   },
 ];
